@@ -17,17 +17,19 @@
 
 using namespace std;
 
-int main() {
+int dataCount() {
 	// Count the number of data
 	fstream dataIn;
 	dataIn.open("data");
 	string dataLine;
 	int dataCount = 0;
-	while(getline(dataIn, dataLine)) {
+	while(getline(dataIn, dataLine))
 		++dataCount;
-	}
 	dataIn.close();
+	return dataCount;
+}
 
+void userRun(int dataCount) {
 	// Redirect cin and cout
 	freopen("data","r",stdin);
 	freopen("out","w",stdout);
@@ -39,7 +41,9 @@ int main() {
 
 	// Redirect cout back to the console
 	freopen("CON", "w", stdout);
+}
 
+int judge() {
 	// Open ans and out files
 	fstream stdAns;
 	stdAns.open("answer", ios::in);
@@ -74,12 +78,16 @@ int main() {
 			break;
 	}
 
-	// Output the result
-	cout << "Pass Rate : " << int(100 * corCount / (double)stdCount) << " % " << endl;
-
 	// Close all the files
 	stdAns.close();
 	usrAns.close();
-	// END
+
+	// Return the result
+	return int(100 * corCount / (double)stdCount);
+}
+
+int main() {
+	userRun(dataCount());
+	cout << "Pass Rate : " << judge() << " % " << endl;
 	return 0;
 }
