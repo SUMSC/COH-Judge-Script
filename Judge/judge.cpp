@@ -6,21 +6,21 @@
 #include <cstring>
 #include <string>
 #include <algorithm>
-#include <set>
-#include <queue>
-#include <vector>
-#include <map>
-#include <stack>
-#include <time.h>
 
-#include ".\user\example.cpp"
+// 需要判别的脚本位置，可修改：
+#include "..\Source\Solution.cpp"
 
 using namespace std;
+
+// 数据文件所在位置，可修改：
+char inFile[] = "../Data/in";
+char outFile[] = "../Data/out";
+char ansFile[] = "../Data/answer";
 
 int dataCount() {
 	// Count the number of data
 	fstream dataIn;
-	dataIn.open("data");
+	dataIn.open(inFile);
 	string dataLine;
 	int dataCount = 0;
 	while(getline(dataIn, dataLine))
@@ -31,8 +31,8 @@ int dataCount() {
 
 void userRun(int dataCount) {
 	// Redirect cin and cout
-	freopen("data","r",stdin);
-	freopen("out","w",stdout);
+	freopen(inFile,"r",stdin);
+	freopen(outFile,"w",stdout);
 
 	// Run the user program
 	Solution sol;
@@ -46,9 +46,9 @@ void userRun(int dataCount) {
 int judge() {
 	// Open ans and out files
 	fstream stdAns;
-	stdAns.open("answer", ios::in);
+	stdAns.open(ansFile, ios::in);
 	fstream usrAns;
-	usrAns.open("out", ios::in);
+	usrAns.open(outFile, ios::in);
 
 	// Count the number of standard answer and user answer
 	string stdAnsLine, usrAnsLine;
