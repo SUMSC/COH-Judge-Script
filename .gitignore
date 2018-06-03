@@ -4,3 +4,8 @@ Solution.class
 .idea
 .vscode
 __pycache__
+COH-Judge-Script.iml
+COH-Judge-Script.ipr
+COH-Judge-Script.iws
+Judge.iml
+__init__.py

@@ -8,14 +8,14 @@
 #include <algorithm>
 
 // 需要判别的脚本位置，可修改：
-#include "..\Source\Solution.cpp"
+#include "../Source/Solution.cpp"
 
 using namespace std;
 
 // 数据文件所在位置，可修改：
-char inFile[] = "../Data/in";
-char outFile[] = "../Data/out";
-char ansFile[] = "../Data/answer";
+char inFile[] = "./Data/in";
+char outFile[] = "./Data/out";
+char ansFile[] = "./Data/answer";
 
 int dataCount() {
 	// Count the number of data

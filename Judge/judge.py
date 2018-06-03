@@ -2,17 +2,20 @@
 
 import sys
 from math import floor
+from os import path
+import os
 
 # 需要判别的脚本所在目录，可修改：
+sys.path.append(os.getcwd()+"/Source")
 sys.path.append("../Source")
-
+#print(os.getcwd()+"/Source")
 # 导入脚本
 from Solution import Solution
 
 # 数据文件所在位置，可修改：
-in_file = "../Data/in"
-out_file = "../Data/out"
-ans_file = "../Data/answer"
+in_file = os.getcwd()+"/Data/in"
+out_file = os.getcwd()+"/Data/out"
+ans_file = os.getcwd()+"/Data/answer"
 
 def dataCount():
     """
@@ -65,7 +68,9 @@ def judge():
 
 def main():
     userRun(dataCount())
-    print("Pass Rate :", str(judge()), "%")
+    #print("fuck")
+    #print(type(judge()))
+    print(str("Pass Rate : {} %".format(judge())))
 
 
 if __name__ == "__main__":

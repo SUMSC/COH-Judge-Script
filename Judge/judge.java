@@ -16,9 +16,9 @@ public class judge {
     private static String base_dir = System.getProperty("user.dir");
     
     // 数据文件所在位置。可修改：
-    private static String in_file = base_dir + "\\Data\\in";
-    private static String out_file = base_dir + "\\Data\\out";
-    private static String ans_file = base_dir + "\\Data\\answer";
+    private static String in_file = base_dir + "/Data/in";
+    private static String out_file = base_dir + "/Data/out";
+    private static String ans_file = base_dir + "/Data/answer";
 
     private static int dataCnt;
     private static Solution usrCode = new Solution();
